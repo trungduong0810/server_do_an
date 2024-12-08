@@ -27,7 +27,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "*",
+    origin: "https://dulichvietnam.dg6ran1zsbkiq.amplifyapp.com",
     credentials: true,
   })
 );
