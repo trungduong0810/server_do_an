@@ -1,5 +1,5 @@
 import express from "express";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 import User from "../database/schemaUser.js";
 import authentication from "../auth/authApp.js";
 
@@ -52,10 +52,13 @@ apiUser.get("/api/users/review/:userId", async (req, res) => {
         .status(404)
         .json({ status: "Error", message: "User not found" });
     }
-    res.json({ status: "Success", data: {
+    res.json({
+      status: "Success",
+      data: {
         username: user.username,
         avatar: user.avatar,
-      }, });
+      },
+    });
   } catch (error) {
     console.error(error);
     res.status(500).json({ status: "Error", message: "Internal Server Error" });
