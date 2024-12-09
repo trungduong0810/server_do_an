@@ -30,7 +30,11 @@ apiLoginAccount.post("/api/login", async (req, res) => {
       user.role,
       "30d"
     );
-    res.cookie("accessToken", accessToken);
+    res.cookie("accessToken", accessToken, {
+    httpOnly: true,
+    secure: true,  // Chỉ hoạt động trên HTTPS
+    sameSite: 'Strict',
+});
     const { password: userPassword, ...dataUser } = user.toObject();
     return res.status(200).json({
       status: "Success",
