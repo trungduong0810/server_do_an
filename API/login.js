@@ -32,8 +32,8 @@ apiLoginAccount.post("/api/login", async (req, res) => {
     );
     res.cookie("accessToken", accessToken, {
       maxAge: 24 * 60 * 60 * 1000, // Thời gian sống 1 ngày (ms)
-      httpOnly: true,
-      secure: true,
+      httpOnly: false,
+      secure: process.env.NODE_ENV === "production",
       path: '/',
       sameSite: 'None',
 });
