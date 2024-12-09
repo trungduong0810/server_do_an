@@ -31,9 +31,10 @@ apiLoginAccount.post("/api/login", async (req, res) => {
       "30d"
     );
     res.cookie("accessToken", accessToken, {
-    httpOnly: true,
-    secure: true,  // Chỉ hoạt động trên HTTPS
-    sameSite: 'Strict',
+     maxAge: 24 * 60 * 60 * 1000, // Thời gian sống 1 ngày (ms)
+  httpOnly: true,
+  secure: true,
+  path: '/',
 });
     const { password: userPassword, ...dataUser } = user.toObject();
     return res.status(200).json({
