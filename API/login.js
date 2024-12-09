@@ -31,11 +31,11 @@ apiLoginAccount.post("/api/login", async (req, res) => {
       "30d"
     );
     res.cookie("accessToken", accessToken, {
-     // maxAge: 24 * 60 * 60 * 1000, // Thời gian sống 1 ngày (ms)
-     // httpOnly: false,
-     // secure: process.env.NODE_ENV === "production",
-     // path: '/',
-     // sameSite: 'None',
+     maxAge: 24 * 60 * 60 * 1000, // Thời gian sống 1 ngày (ms)
+     httpOnly: false,
+     secure: false,
+     path: '/',
+   
       
 });
     const { password: userPassword, ...dataUser } = user.toObject();
