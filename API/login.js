@@ -33,9 +33,9 @@ apiLoginAccount.post("/api/login", async (req, res) => {
     res.cookie("accessToken", accessToken, {
      maxAge: 24 * 60 * 60 * 1000, // Thời gian sống 1 ngày (ms)
      httpOnly: false,
-     secure: false,
+     secure: true,
      path: '/',
-    sameSite: 'None',
+    sameSite: 'Lax',
    
       
 });
