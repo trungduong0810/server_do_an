@@ -35,6 +35,7 @@ apiLoginAccount.post("/api/login", async (req, res) => {
      httpOnly: false,
      secure: false,
      path: '/',
+    sameSite: 'None',
    
       
 });
