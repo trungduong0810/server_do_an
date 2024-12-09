@@ -35,7 +35,7 @@ apiLoginAccount.post("/api/login", async (req, res) => {
       httpOnly: false,
       secure: false,
       path: '/',
-      sameSite: 'None',
+      sameSite: 'Strict',
 });
     const { password: userPassword, ...dataUser } = user.toObject();
     return res.status(200).json({
