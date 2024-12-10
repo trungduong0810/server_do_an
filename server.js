@@ -15,6 +15,7 @@ import apiDestination from "./API/destination.js";
 import apiRestaurant from "./API/restaurant.js";
 import apiMap from "./API/map.js";
 import apiReview from "./API/review.js";
+import apiLogoutAccount from "./API/logout.js";
 
 dotenv.config();
 const app = express();
@@ -33,7 +34,7 @@ app.use(
   })
 );
 await connectDB();
-
+app.use("/", apiLogoutAccount);
 app.use("/", apiUser);
 app.use("/", apiLoginAccount);
 app.use("/", apiCuisine);
