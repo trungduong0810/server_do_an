@@ -29,7 +29,7 @@ app.use(cookieParser());
 app.use(
   cors({
    // origin: "https://dulichvietnam.dg6ran1zsbkiq.amplifyapp.com",
-    origin: "http://localhost:3000",
+    origin: "https://dulichvietnam.dg6ran1zsbkiq.amplifyapp.com",
     credentials: true,
   })
 );
